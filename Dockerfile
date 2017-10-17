@@ -32,21 +32,21 @@ ENV CHEF_REPORTING_DOWNLOAD_SHA256 ${CHEF_REPORTING_DOWNLOAD_SHA256}
 
 # Download and install the Chef-Server package
 RUN set -x \
-    && wget --no-check-certificate -O chef-server-core_"$CHEF_SERVER_VERSION"-1_amd64.deb "$CHEF_SERVER_DOWNLOAD_URL" \
+    && wget -O chef-server-core_"$CHEF_SERVER_VERSION"-1_amd64.deb "$CHEF_SERVER_DOWNLOAD_URL" \
     && echo "$CHEF_SERVER_DOWNLOAD_SHA256 chef-server-core_$CHEF_SERVER_VERSION-1_amd64.deb" | sha256sum -c - \
     && dpkg -i chef-server-core_"$CHEF_SERVER_VERSION"-1_amd64.deb \
     && rm chef-server-core_"$CHEF_SERVER_VERSION"-1_amd64.deb
 
 # Download and install the Chef-Manage package
 RUN set -x \
-    && wget --no-check-certificate -O chef-manage_"$CHEF_MANAGE_VERSION"-1_amd64.deb "$CHEF_MANAGE_DOWNLOAD_URL" \
+    && wget -O chef-manage_"$CHEF_MANAGE_VERSION"-1_amd64.deb "$CHEF_MANAGE_DOWNLOAD_URL" \
     && echo "$CHEF_MANAGE_DOWNLOAD_SHA256 chef-manage_$CHEF_MANAGE_VERSION-1_amd64.deb" | sha256sum -c - \
     && dpkg -i chef-manage_"$CHEF_MANAGE_VERSION"-1_amd64.deb \
     && rm chef-manage_"$CHEF_MANAGE_VERSION"-1_amd64.deb
 
 # Download and install the Chef-Reporting package
 RUN set -x \
-    && wget --no-check-certificate -O opscode-reporting_"$CHEF_REPORTING_VERSION"-1_amd64.deb "$CHEF_REPORTING_DOWNLOAD_URL" \
+    && wget -O opscode-reporting_"$CHEF_REPORTING_VERSION"-1_amd64.deb "$CHEF_REPORTING_DOWNLOAD_URL" \
     && echo "$CHEF_REPORTING_DOWNLOAD_SHA256 opscode-reporting_$CHEF_REPORTING_VERSION-1_amd64.deb" | sha256sum -c - \
     && dpkg -i opscode-reporting_"$CHEF_REPORTING_VERSION"-1_amd64.deb \
     && rm opscode-reporting_"$CHEF_REPORTING_VERSION"-1_amd64.deb
