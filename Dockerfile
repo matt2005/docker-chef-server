@@ -65,7 +65,7 @@ ADD scripts/* /
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Expose ports
-EXPOSE 443
+EXPOSE 80 443
 
 # Set WORKDIR
 WORKDIR /opt/opscode
