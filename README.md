@@ -105,3 +105,17 @@ docker build \
   -t sunggun/chef-server:12.9.1 \
   .
 ```
+
+For latest
+```bash
+docker build \
+  --build-arg CHEF_SERVER_VERSION=12.19.31 \
+  --build-arg CHEF_SERVER_DOWNLOAD_SHA256=bbf6127e03d10154e28b1270869731b38bd5a0981c9f9cb96f973c290d14c4df \
+  --build-arg CHEF_MANAGE_VERSION=2.5.16 \
+  --build-arg CHEF_MANAGE_DOWNLOAD_SHA256=573e67a71ae718ab197cf1c8973a2a3566feefaf7246f062534a40a157850137 \
+  --build-arg CHEF_REPORTING_VERSION=1.8.0 \
+  --build-arg CHEF_REPORTING_DOWNLOAD_SHA256=e7aa43fda58ce019af4e71798574594a06144d7a57704d5e8069e98add0bbaf1 \
+  -t chef-server_16:12.19.31 .
+
+
+```
